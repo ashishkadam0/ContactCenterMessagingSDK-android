@@ -28,7 +28,6 @@ import com.lcw.lsdk.data.requests.OmnichannelConfig
 import com.lcw.lsdk.data.requests.TelemetrySDKConfig
 import com.lcw.lsdk.enum.ConversationStateEnum
 import com.lcw.lsdk.listeners.LCWMessagingDelegate
-import com.lcw.lsdk.logger.OLog
 import com.ms.lcw.Constants.authTkn
 import com.ms.lcw.Constants.orgId
 import com.ms.lcw.Constants.orgUrl
@@ -203,6 +202,9 @@ class ChatActivity : AppCompatActivity() {
                     Log.d(TAG, "onAgentChatEnded")
                 }
 
+                override fun onBotSignInAuth(content: String) {
+                }
+
                 override fun onAgentAssigned(content: String) {
                     Log.d(TAG, "onAgentAssigned-$content")
                 }
@@ -219,16 +221,20 @@ class ChatActivity : AppCompatActivity() {
                     Log.d(TAG, "onNewMessageReceived-$message")
                 }
 
+                override fun onPostChatSurveyDisplayed(isExternalLink: Boolean) {
+                    Log.d(TAG, "onPostChatSurveyDisplayed-$isExternalLink")
+                }
+
                 override fun onError(error: ErrorResponse?) {
                     Log.d(TAG, "onError-${error?.errorMessage}")
                 }
 
-                override fun onPreChatSurveyDisplayed() {
-                    Log.d(TAG, "onPreChatSurveyDisplayed")
+                override fun onHeaderUtilityClicked() {
+                    Log.d(TAG, "onHeaderUtilityClicked")
                 }
 
-                override fun onPostChatSurveyDisplayed() {
-                    Log.d(TAG, "onPostChatSurveyDisplayed")
+                override fun onPreChatSurveyDisplayed() {
+                    Log.d(TAG, "onPreChatSurveyDisplayed")
                 }
 
                 override fun onChatRestored() {
