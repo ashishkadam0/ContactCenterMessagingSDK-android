@@ -113,19 +113,10 @@ tasks.named("preBuild") {
 
 // Dependencies for your pure Android application.
 dependencies {
-    // Include your pre-built React Native AAR and other AARs manually placed in `libs/`.
-    //implementation(files("libs/app-debug.aar"))
-
-    // --- CRITICAL: Add SoLoader explicitly to the consuming app ---
-    // This ensures the SoLoader class is available at runtime for the React Native code.
-    //implementation("com.facebook.soloader:soloader:0.10.5")
-
-    // --- NEW: Add react-android directly to the consuming app with exclusions ---
-    // This ensures core React Native classes (like ReactPackage) are on the classpath.
-    // Exclusions prevent native library duplication/conflicts with your AAR.
-    implementation(files("libs/ContactCenterMessagingWidget.aar"))
     implementation(files("libs/OmnichannelChatSDK.aar"))
+    //implementation(files("libs/ContactCenterMessagingWidget.aar"))
     implementation(libs.react.android)
+    implementation("com.microsoft.lcwsdk:ContactCenterMessagingWidget:1.1.22")
     implementation(libs.jsc.android)
     // Google Flexbox Layout
     implementation(libs.flexbox)
@@ -141,11 +132,8 @@ dependencies {
     implementation(libs.firebase.messaging.ktx) // Keep if used
     implementation(platform(libs.firebase.bom)) // Keep if used
     implementation(libs.gson)
-
-    // Core AndroidX libraries (ensure these are aligned with your AAR's dependencies)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
-    implementation(libs.material)
     implementation(libs.androidx.constraintlayout)
     implementation(libs.androidx.navigation.fragment.ktx)
     implementation(libs.androidx.navigation.ui.ktx)
@@ -153,9 +141,15 @@ dependencies {
     // Kotlin Coroutines (often used with AndroidX libraries)
     implementation(libs.kotlinx.coroutines.android)
 
+    implementation("com.google.android.material:material:1.9.0")
+    implementation("androidx.appcompat:appcompat:1.7.0")
+    implementation("androidx.coordinatorlayout:coordinatorlayout:1.2.0")
+    implementation("androidx.constraintlayout:constraintlayout:2.2.0")
+
     // Test dependencies
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+
 
 }

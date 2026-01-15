@@ -1153,7 +1153,7 @@
     <style name="LCWsplashLoadingProgressBarDefault.splashLoadingProgressBar" />
 
     <style name="LCWsplashContainerDefault">
-        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">match_parent</item>
         <item name="android:background">@color/lcw_messagingTitleBackground</item>
     </style>
@@ -1590,5 +1590,18 @@
     <style name="LCWAdaptiveInlineActionDefault.AdaptiveInlineActionDefault" />
     <style name="LCWAdaptiveInlineActionDefault.AdaptiveInlineAction" />
     <style name="LCWAdaptiveShowCardActionDefault.AdaptiveShowCardAction" />
+    <style name="ChatBottomSheetTheme" parent="ThemeOverlay.MaterialComponents.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/ChatBottomSheetStyle</item>
+    </style>
+
+    <style name="ChatBottomSheetStyle" parent="Widget.MaterialComponents.BottomSheet.Modal">
+        <item name="shapeAppearanceOverlay">@style/ChatBottomSheetShape</item>
+    </style>
+
+    <style name="ChatBottomSheetShape">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeTopLeft">20dp</item>
+        <item name="cornerSizeTopRight">20dp</item>
+    </style>
 
 </resources>

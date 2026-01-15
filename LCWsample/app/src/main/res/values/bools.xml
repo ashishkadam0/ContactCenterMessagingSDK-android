@@ -49,4 +49,6 @@
     <bool name="lcw_enableCustomAdaptiveCardFontFamily">true</bool>
     <bool name="lcw_enableBotFRL">true</bool>
     <bool name="lcw_hideNewMessageArrivalButton">true</bool>
+    <bool name="lcw_hideStartChatFullScreenLoader">true</bool>
+    <bool name="lcw_showPostChatSurveyLoader">false</bool>
 </resources>

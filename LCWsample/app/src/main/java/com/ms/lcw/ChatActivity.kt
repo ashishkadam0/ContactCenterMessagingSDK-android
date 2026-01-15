@@ -230,12 +230,21 @@ class ChatActivity : AppCompatActivity() {
                     Log.d(TAG, "onPreChatSurveyDisplayed")
                 }
 
-                override fun onPostChatSurveyDisplayed() {
-                    Log.d(TAG, "onPostChatSurveyDisplayed")
+                override fun onPostChatSurveyDisplayed(isExternalLink: Boolean) {
+                    TODO("Not yet implemented")
                 }
+
 
                 override fun onChatRestored() {
                     Log.d(TAG, "onChatRestored")
+                }
+
+                override fun onHeaderUtilityClicked() {
+                    TODO("Not yet implemented")
+                }
+
+                override fun onBotSignInAuth(content: String) {
+                    TODO("Not yet implemented")
                 }
             })
         }

@@ -15,7 +15,7 @@
         tools:replace="android:allowBackup,android:roundIcon"
         tools:targetApi="31">
         <activity
-            android:name=".ChatActivity"
+            android:name=".ChatFragmentActivity"
             android:exported="true"
             android:theme="@style/AppTheme"
             android:windowSoftInputMode="adjustResize">
